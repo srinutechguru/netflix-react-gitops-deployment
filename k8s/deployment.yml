@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netflix-clone-deployment
+  namespace: netflix-app
+  labels:
+    app: netflix-clone
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: netflix-clone
+  template:
+    metadata:
+      labels:
+        app: netflix-clone
+    spec:
+      containers:
+      - name: netflix-clone
+        # The Jenkins pipeline will automatically replace this entire line with the new tag
+        image: srinutechguru/netflix-react-clone:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
