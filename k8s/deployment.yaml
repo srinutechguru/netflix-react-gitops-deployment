@@ -19,7 +19,7 @@ spec:
       containers:
       - name: netflix-clone
         # The Jenkins pipeline will automatically replace this entire line with the new tag
-        image: srinutechguru/netflix-react-clone:v25
+        image: srinutechguru/netflix-react-clone:v26-4cb1a60
         imagePullPolicy: Always
         ports:
         - containerPort: 80
